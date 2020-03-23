@@ -6,6 +6,9 @@ package(
     ],
     licenses = ["notice"],  # Apache 2.0
 )
+exports_files([
+    "nnapi_delegate_c_wrapper.h",
+])
 
 cc_library(
     name = "nnapi_delegate",
@@ -73,6 +76,15 @@ cc_library(
         "//tensorflow/lite/nnapi:nnapi_util",
         "@com_google_absl//absl/memory",
         "@com_google_absl//absl/types:optional",
+    ],
+)
+
+cc_library(
+    name = "nnapi_delegate_c",
+    srcs = ["nnapi_delegate_c_wrapper.cc"],
+    hdrs = ["nnapi_delegate_c_wrapper.h"],
+    deps = [
+    ":nnapi_delegate",
     ],
 )
 

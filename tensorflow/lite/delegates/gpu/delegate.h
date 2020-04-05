@@ -103,7 +103,7 @@ typedef struct {
 //   priority1 = TFLITE_GPU_INFERENCE_PRIORITY_MAX_PRECISION
 //   priority2 = TFLITE_GPU_INFERENCE_PRIORITY_AUTO
 //   priority3 = TFLITE_GPU_INFERENCE_PRIORITY_AUTO
-TFL_CAPI_EXPORT TfLiteGpuDelegateOptionsV2 TfLiteGpuDelegateOptionsV2Default();
+TFL_CAPI_EXPORT TfLiteGpuDelegateOptionsV2* TfLiteGpuDelegateOptionsV2Default();
 
 // Creates a new delegate instance that need to be destroyed with
 // TfLiteGpuDelegateV2Delete when delegate is no longer used by TFLite.

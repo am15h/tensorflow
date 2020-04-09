@@ -251,6 +251,9 @@ TFL_CAPI_EXPORT extern const char* TfLiteTensorName(const TfLiteTensor* tensor);
 TFL_CAPI_EXPORT extern TfLiteQuantizationParams TfLiteTensorQuantizationParams(
     const TfLiteTensor* tensor);
 
+TFL_CAPI_EXPORT extern TfLiteQuantizationParams* TfLiteTensorQuantizationParamsPointer(
+        const TfLiteTensor* tensor);
+
 // Copies from the provided input buffer into the tensor's buffer.
 // REQUIRES: input_data_size == TfLiteTensorByteSize(tensor)
 TFL_CAPI_EXPORT extern TfLiteStatus TfLiteTensorCopyFromBuffer(

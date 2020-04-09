@@ -207,6 +207,13 @@ TfLiteQuantizationParams TfLiteTensorQuantizationParams(
   return tensor->params;
 }
 
+TfLiteQuantizationParams* TfLiteTensorQuantizationParamsPointer(
+        const TfLiteTensor* tensor) {
+    TfLiteQuantizationParams* ptr = (TfLiteQuantizationParams*)malloc(sizeof(TfLiteQuantizationParams));
+    *ptr = tensor->params;
+    return ptr;
+}
+
 TfLiteStatus TfLiteTensorCopyFromBuffer(TfLiteTensor* tensor,
                                         const void* input_data,
                                         size_t input_data_size) {

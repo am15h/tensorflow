@@ -73,7 +73,7 @@ class Delegate {
  public:
   explicit Delegate(const TfLiteGpuDelegateOptionsV2* options)
       : num_delegate_kernels_(0) {
-    options_ = options ? *options : TfLiteGpuDelegateOptionsV2Default();
+    options_ = options ? *options : *TfLiteGpuDelegateOptionsV2Default();
     if (options_.max_delegated_partitions <= 0) {
       options_.max_delegated_partitions = 1;
     }

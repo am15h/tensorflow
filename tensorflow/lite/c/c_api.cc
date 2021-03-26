@@ -19,6 +19,7 @@ limitations under the License.
 #include "tensorflow/lite/builtin_ops.h"
 #include "tensorflow/lite/c/c_api_internal.h"
 #include "tensorflow/lite/create_op_resolver.h"
+#include "tensorflow/lite/delegates/flex/delegate.h"
 #include "tensorflow/lite/delegates/interpreter_utils.h"
 #include "tensorflow/lite/delegates/nnapi/nnapi_delegate.h"
 #include "tensorflow/lite/error_reporter.h"
@@ -288,6 +289,13 @@ TfLiteInterpreter* InterpreterCreateWithOpResolver(
     if (optional_options->use_nnapi) {
       if (interpreter->ModifyGraphWithDelegate(tflite::NnApiDelegate()) !=
           kTfLiteOk) {
+        return nullptr;
+      }
+    }
+
+    if (optional_options->use_flex_delegate) {
+      if (interpreter->ModifyGraphWithDelegate(
+              tflite::FlexDelegate::Create().release()) != kTfLiteOk) {
         return nullptr;
       }
     }

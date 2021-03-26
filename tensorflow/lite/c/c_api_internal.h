@@ -93,6 +93,8 @@ struct TfLiteInterpreterOptions {
   // then if Invoke with delegates fails, it will be
   // automatically retried without delegates.
   bool enable_delegate_fallback = false;
+
+  bool use_flex_delegate = true;
 };
 
 struct TfLiteInterpreter {

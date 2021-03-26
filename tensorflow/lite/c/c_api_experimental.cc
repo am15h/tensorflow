@@ -75,6 +75,11 @@ void TfLiteInterpreterOptionsSetUseNNAPI(TfLiteInterpreterOptions* options,
   options->use_nnapi = enable;
 }
 
+void TfLiteInterpreterOptionsSetUseFlexDelegate(
+    TfLiteInterpreterOptions* options, bool enable) {
+  options->use_flex_delegate = enable;
+}
+
 void TfLiteInterpreterOptionsSetEnableDelegateFallback(
     TfLiteInterpreterOptions* options, bool enable) {
   options->enable_delegate_fallback = enable;

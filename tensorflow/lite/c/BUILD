@@ -68,6 +68,7 @@ cc_library(
         "//tensorflow/lite:version",
         "//tensorflow/lite/delegates:interpreter_utils",
         "//tensorflow/lite/delegates/nnapi:nnapi_delegate",
+        "//tensorflow/lite/delegates/flex:delegate",
         "//tensorflow/lite/kernels/internal:compatibility",
     ],
     alwayslink = 1,  # Why?? TODO(b/161243354): eliminate this.

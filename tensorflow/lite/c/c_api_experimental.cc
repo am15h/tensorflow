@@ -77,6 +77,11 @@ void TfLiteInterpreterOptionsSetUseNNAPI(TfLiteInterpreterOptions* options,
   options->use_nnapi = enable;
 }
 
+void TfLiteInterpreterOptionsSetUseFlexDelegate(TfLiteInterpreterOptions* options,
+                                         bool enable) {
+  options->use_flex_delegate = enable;
+}
+
 #ifdef __cplusplus
 }  // extern "C"
 #endif  // __cplusplus

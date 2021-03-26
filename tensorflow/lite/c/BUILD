@@ -65,6 +65,7 @@ cc_library(
         "//tensorflow/lite:framework",
         "//tensorflow/lite:version",
         "//tensorflow/lite/delegates/nnapi:nnapi_delegate",
+        "//tensorflow/lite/delegates/flex:delegate",
         "//tensorflow/lite/kernels:builtin_ops",
         "//tensorflow/lite/kernels/internal:compatibility",
     ],

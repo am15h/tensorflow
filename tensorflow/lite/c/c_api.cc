@@ -25,6 +25,7 @@ limitations under the License.
 #include "tensorflow/lite/kernels/register.h"
 #include "tensorflow/lite/model.h"
 #include "tensorflow/lite/version.h"
+#include "tensorflow/lite/delegates/flex/delegate.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -285,6 +286,13 @@ TfLiteInterpreter* InterpreterCreateWithOpResolver(
     }
 
     if (optional_options->use_nnapi) {
+      if (interpreter->ModifyGraphWithDelegate(tflite::NnApiDelegate()) !=
+          kTfLiteOk) {
+        return nullptr;
+      }
+    }
+
+    if (optional_options->use_flex_delegate) {
       if (interpreter->ModifyGraphWithDelegate(tflite::NnApiDelegate()) !=
           kTfLiteOk) {
         return nullptr;

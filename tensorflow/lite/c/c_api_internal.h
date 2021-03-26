@@ -87,6 +87,8 @@ struct TfLiteInterpreterOptions {
   TfLiteErrorReporterCallback error_reporter_callback;
 
   bool use_nnapi = false;
+  
+  bool use_flex_delegate = true;
 };
 
 struct TfLiteInterpreter {

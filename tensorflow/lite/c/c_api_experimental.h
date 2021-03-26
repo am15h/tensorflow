@@ -119,6 +119,12 @@ TfLiteInterpreterCreateWithSelectedOps(const TfLiteModel* model,
 TFL_CAPI_EXPORT extern void TfLiteInterpreterOptionsSetUseNNAPI(
     TfLiteInterpreterOptions* options, bool enable);
 
+/// Enable or disable the Flex Delegate for the interpreter (true to enable).
+///
+/// WARNING: This is an experimental API and subject to change.
+TFL_CAPI_EXPORT extern void TfLiteInterpreterOptionsSetUseFlexDelegate(
+    TfLiteInterpreterOptions* options, bool enable);    
+
 #ifdef __cplusplus
 }  // extern "C"
 #endif  // __cplusplus
